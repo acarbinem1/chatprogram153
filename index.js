@@ -16,14 +16,11 @@ io.on('connection', function(socket){
 
 
 io.on('connection', function(socket){
-  console.log('a user connected');
   io.emit('chat message', 'A user has connected');
   socket.on('disconnect', function(){
-    console.log('user disconnected');
     io.emit('chat message', 'A user has disconnected');
   });
 });
 
 http.listen(3000, function(){
-  console.log('listening on *:3000');
 });
